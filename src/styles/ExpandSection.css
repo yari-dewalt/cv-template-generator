@@ -1,0 +1,22 @@
+.expand-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.expand-section > h2 {
+  margin: 0.4rem;
+}
+
+.expand-section > img {
+  filter: invert(1);
+}
+
+.expand-icon {
+  transform: rotate(180deg);
+}
+
+.expand-icon.open {
+  transform: rotate(0deg);
+}
