@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import InputGroup from "./components/InputGroup.jsx";
+import PersonalDetails from "./components/PersonalDetails.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -10,21 +11,18 @@ function App() {
     "Location": "Los Angeles, CA",
   });
 
-  const handlePersonalDetailsChange = (key, value) => {
-    console.log(key, value);
+  const handlePersonalDetailsChange = (e) => {
+    const { key } = e.target.dataset;
     setPersonalDetails((prevValues) => ({
       ...prevValues,
-      [key]: value,
+      [key]: e.target.value,
     }));
   };
 
   return (
     <>
       <div id="edit">
-        <InputGroup id="full-name" placeholder="Type here!" defaultValue="Jane Doe" labelText="Full name" onChange={(e) => handlePersonalDetailsChange("Full name", e.target.value)}></InputGroup>
-        <InputGroup id="email" placeholder="Type here!" defaultValue="jane.doe@gmail.com" labelText="Email" onChange={(e) => handlePersonalDetailsChange("Email", e.target.value)}></InputGroup>
-        <InputGroup id="phone-number" placeholder="Type here!" defaultValue="(123) 456-7890" labelText="Phone number" onChange={(e) => handlePersonalDetailsChange("Phone number", e.target.value)}></InputGroup>
-        <InputGroup id="location" placeholder="Type here!" defaultValue="Los Angeles, CA" labelText="Location" onChange={(e) => handlePersonalDetailsChange("Location", e.target.value)}></InputGroup>
+        <PersonalDetails onChange={handlePersonalDetailsChange} fullName={personalDetails["Full name"]} email={personalDetails["Email"]} phoneNumber={personalDetails["Phone number"]} location={personalDetails["Location"]}/>
       </div>
       <div id="preview">
         <div id="preview-header">
@@ -49,4 +47,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
