@@ -1,0 +1,25 @@
+#personal-info {
+  background-color: blue;
+}
+
+#personal-info-name {
+  margin-bottom: 0;
+}
+
+#personal-contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#personal-contact-info > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#personal-contact-info > div > img {
+  filter: invert(1);
+}
