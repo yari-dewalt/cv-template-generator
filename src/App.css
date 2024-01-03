@@ -55,31 +55,5 @@
   flex-direction: column;
 }
 
-#preview-header {
-  background-color: blue;
-}
-
-#preview-name {
-  margin-bottom: 0;
-}
-
-#preview-contact-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-#preview-contact-info > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-#preview-contact-info > div > img {
-  filter: invert(1);
-}
-
 #edit {
 }
