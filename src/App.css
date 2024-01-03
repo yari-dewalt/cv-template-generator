@@ -1,5 +1,6 @@
 #root {
-  max-width: 1280px;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -43,4 +44,43 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#preview {
+  background-color: red;
+  height: 100%;
+  min-width: 60%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#preview-header {
+  background-color: blue;
+}
+
+#preview-name {
+  margin-bottom: 0;
+}
+
+#preview-contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#preview-contact-info > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#preview-contact-info > div > img {
+  filter: invert(1);
+}
+
+#edit {
+  background-color: blue;
 }
