@@ -1,0 +1,8 @@
+.personal-details {
+  padding: 1rem;
+  background-color: green;
+}
+
+.personal-details > h2 {
+  margin: 0 0 0.6rem 0;
+}
