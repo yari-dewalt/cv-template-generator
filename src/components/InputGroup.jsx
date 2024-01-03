@@ -3,15 +3,16 @@ import "../styles/InputGroup.css"
 function InputGroup({
   id,
   placeholder,
-  defaultValue,
   labelText,
   onChange,
+  value,
+  "data-key": dataKey,
 }) {
   return (
     <>
       <div className="input-group">
         <label htmlFor={id}>{labelText}</label>
-        <input id={id} placeholder={placeholder} defaultValue={defaultValue} onChange={onChange}></input>
+        <input id={id} placeholder={placeholder} onChange={onChange} value={value} data-key={dataKey}></input>
       </div> 
     </>
   )
