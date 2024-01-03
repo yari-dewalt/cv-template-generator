@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import InputGroup from "./components/InputGroup.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -20,22 +21,10 @@ function App() {
   return (
     <>
       <div id="edit">
-        <div className="input-group">
-          <label for="full-name">Full name</label>
-          <input id="full-name" placeholder="Type Here!" defaultValue="Jane Doe" onChange={(e) => handlePersonalDetailsChange("Full name", e.target.value)}></input>
-        </div> 
-        <div className="input-group">
-          <label for="email">Email</label>
-          <input id="email" placeholder="Type Here!" defaultValue="jane.doe@gmail.com" onChange={(e) => handlePersonalDetailsChange("Email", e.target.value)}></input>
-        </div>
-        <div className="input-group">
-          <label for="phone-number">Phone number</label>
-          <input id="phone-number" placeholder="Type Here!" defaultValue="(123) 456-7890" onChange={(e) => handlePersonalDetailsChange("Phone number", e.target.value)}></input>
-        </div>
-        <div className="input-group">
-          <label for="email">Email</label>
-          <input id="email" placeholder="Type Here!" defaultValue="Los Angeles, CA" onChange={(e) => handlePersonalDetailsChange("Location", e.target.value)}></input>
-        </div>
+        <InputGroup id="full-name" placeholder="Type here!" defaultValue="Jane Doe" labelText="Full name" onChange={(e) => handlePersonalDetailsChange("Full name", e.target.value)}></InputGroup>
+        <InputGroup id="email" placeholder="Type here!" defaultValue="jane.doe@gmail.com" labelText="Email" onChange={(e) => handlePersonalDetailsChange("Email", e.target.value)}></InputGroup>
+        <InputGroup id="phone-number" placeholder="Type here!" defaultValue="(123) 456-7890" labelText="Phone number" onChange={(e) => handlePersonalDetailsChange("Phone number", e.target.value)}></InputGroup>
+        <InputGroup id="location" placeholder="Type here!" defaultValue="Los Angeles, CA" labelText="Location" onChange={(e) => handlePersonalDetailsChange("Location", e.target.value)}></InputGroup>
       </div>
       <div id="preview">
         <div id="preview-header">
