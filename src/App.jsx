@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import InputGroup from "./components/InputGroup.jsx";
 import PersonalDetails from "./components/PersonalDetails.jsx";
+import PersonalInfoSection from "./components/PersonalInfoSection.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -25,23 +26,7 @@ function App() {
         <PersonalDetails onChange={handlePersonalDetailsChange} fullName={personalDetails["Full name"]} email={personalDetails["Email"]} phoneNumber={personalDetails["Phone number"]} location={personalDetails["Location"]}/>
       </div>
       <div id="preview">
-        <div id="preview-header">
-          <h1 id="preview-name">{personalDetails['Full name']}</h1>
-          <div id="preview-contact-info">
-            <div id="preview-email">
-              <img src="../public/mail.svg"></img>
-              <p>{personalDetails["Email"]}</p>
-            </div>
-            <div id="preview-number">
-              <img src="../public/phone.svg"></img>
-              <p>{personalDetails["Phone number"]}</p>
-            </div>
-            <div id="preview-location">
-              <img src="../public/location.svg"></img>
-              <p>{personalDetails["Location"]}</p>
-            </div>
-          </div>
-        </div>
+        <PersonalInfoSection fullName={personalDetails["Full name"]} email={personalDetails["Email"]} phoneNumber={personalDetails["Phone number"]} location={personalDetails["Location"]}/>
       </div>
     </>
   )
