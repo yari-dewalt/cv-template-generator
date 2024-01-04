@@ -1,0 +1,21 @@
+.education-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem 0 3rem;
+}
+
+.education-info-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.education-info-group > p {
+  margin: 0;
+  text-wrap: wrap;
+}
+
+.education-schoolName {
+  font-weight: bold;
+}
