@@ -6,7 +6,7 @@ function EducationInfo({ data }) {
     <>
       <div className="education-info">
         <div className="education-info-group">
-          <p className="education-date">{`${startDate} - ${endDate}`}</p>
+          <p className="education-date">{startDate && endDate ? `${startDate} - ${endDate}` : startDate || endDate}</p>
           <p className="education-location">{location}</p>
         </div>
         <div className="education-info-group">
