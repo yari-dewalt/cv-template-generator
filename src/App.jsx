@@ -8,9 +8,9 @@ import ExpandSection from "./components/ExpandSection.jsx";
 import EducationForm from "./components/EducationForm.jsx";
 import EducationInfo from "./components/EducationInfo.jsx";
 import InfoSection from "./components/InfoSection.jsx";
-import CollapsedForm from "./components/CollapsedForm.jsx";
 import CreateForm from "./components/CreateForm.jsx";
 import DisplayForms from "./components/DisplayForms.jsx";
+import EditEducationSection from "./components/EditEducationSection.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(data.personalInfo);
@@ -107,9 +107,15 @@ function App() {
           phoneNumber={personalDetails.phoneNumber}
           location={personalDetails.location}
         />
-        <ExpandSection isOpen={sectionOpen === "Education"} setOpen={setOpen} sectionName="Education" iconSource="../public/education.svg"/>
-        <DisplayForms onChange={handleSectionChange} toggleCollapsed={toggleCollapsed} onRemove={removeForm} titleKey="schoolName" arrayName="educations" forms={sections.educations} FormComponent={EducationForm}/>
-        <CreateForm onClick={createEducationForm} buttonText={`+ ${"Education"}`}/>
+        <EditEducationSection
+          educations={sections.educations}
+          isOpen={sectionOpen === "Education"}
+          onChange={handleSectionChange}
+          createForm={createEducationForm}
+          setOpen={setOpen}
+          toggleCollapsed={toggleCollapsed}
+          onRemove={removeForm}
+        />
       </div>
       <div id="preview">
         <PersonalInfoSection fullName={personalDetails.fullName} email={personalDetails.email} phoneNumber={personalDetails.phoneNumber} location={personalDetails.location}/>
