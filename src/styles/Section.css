@@ -1,0 +1,9 @@
+.section-content {
+  opacity: 0;
+  height: 0;
+}
+
+.section-content.open {
+  opacity: 1;
+  height: auto;
+}
