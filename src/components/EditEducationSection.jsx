@@ -33,7 +33,7 @@ function EditEducationSection({
           arrayName="educations"
         />
 
-        <CreateForm onClick={createForm} buttonText="+ Education"/>
+        {educations.every(education => education.isCollapsed) && <CreateForm onClick={createForm} buttonText="+ Education"/>}
       </div>
     </div>
   );
