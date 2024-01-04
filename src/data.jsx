@@ -17,6 +17,7 @@ const data = {
         startDate: "08/2020",
         endDate: "present",
         id: uniqid(),
+        isCollapsed: true,
       },
     ],
 
@@ -29,6 +30,7 @@ const data = {
         startDate: "08/2020",
         endDate: "present",
         id: uniqid(),
+        isCollapsed: true,
       },
     ],
   },
