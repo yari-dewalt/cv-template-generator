@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import uniqid from 'uniqid';
 import data from "./data.jsx";
 import './App.css'
 import PersonalDetails from "./components/PersonalDetails.jsx";
@@ -6,6 +7,10 @@ import PersonalInfoSection from "./components/PersonalInfoSection.jsx";
 import ExpandSection from "./components/ExpandSection.jsx";
 import EducationForm from "./components/EducationForm.jsx";
 import EducationInfo from "./components/EducationInfo.jsx";
+import InfoSection from "./components/InfoSection.jsx";
+import CollapsedForm from "./components/CollapsedForm.jsx";
+import CreateForm from "./components/CreateForm.jsx";
+import DisplayForms from "./components/DisplayForms.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(data.personalInfo);
@@ -41,6 +46,56 @@ function App() {
   const [sectionOpen, setSectionOpen] = useState(null);
   const setOpen = (sectionName) => setSectionOpen(sectionName);
 
+  function createForm(arrayName, object) {
+    const section = structuredClone(sections[arrayName]);
+    section.push(object);
+    setSections({...sections, [arrayName]: section});
+  }
+
+  const createEducationForm = () =>
+    createForm("educations", {
+      degree: "",
+      schoolName: "",
+      location: "",
+      startDate: "",
+      endDate: "",
+      isCollapsed: false,
+      id: uniqid(),
+    });
+
+  function toggleValue(e, key) {
+    const sectionForm = e.target.closest(".section-form");
+    const { id } = sectionForm;
+    console.log(id);
+    const { arrayName } = sectionForm.dataset;
+    console.log(arrayName);
+    const section = sections[arrayName];
+    setSections({
+      ...sections,
+      [arrayName]: section.map((form) => {
+        if (form.id === id) {
+          form[key] = !form[key];
+        }
+
+        console.log(form);
+        return form;
+      }),
+    });
+  }
+
+  const toggleCollapsed = (e) => toggleValue(e, "isCollapsed");
+
+  function removeForm(e) {
+    const form = e.target.closest(".section-form");
+    const { arrayName } = form.dataset;
+    const section = sections[arrayName];
+    const { id } = form;
+
+    setSections({
+      ...sections,
+      [arrayName]: section.filter((item) => item.id !== id),
+    });
+  }
 
   return (
     <>
@@ -53,14 +108,12 @@ function App() {
           location={personalDetails.location}
         />
         <ExpandSection isOpen={sectionOpen === "Education"} setOpen={setOpen} sectionName="Education" iconSource="../public/education.svg"/>
-        <EducationForm data={educationDetails} onChange={handleSectionChange}/>
+        <DisplayForms onChange={handleSectionChange} toggleCollapsed={toggleCollapsed} onRemove={removeForm} titleKey="schoolName" arrayName="educations" forms={sections.educations} FormComponent={EducationForm}/>
+        <CreateForm onClick={createEducationForm} buttonText={`+ ${"Education"}`}/>
       </div>
       <div id="preview">
         <PersonalInfoSection fullName={personalDetails.fullName} email={personalDetails.email} phoneNumber={personalDetails.phoneNumber} location={personalDetails.location}/>
-        <div>
-          <h3>Education</h3>
-          <EducationInfo data={educationDetails}/>
-        </div>
+        <InfoSection array={sections.educations} InfoComponent={EducationInfo} title="Education"/>
       </div>
     </>
   )
