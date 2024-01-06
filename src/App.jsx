@@ -78,6 +78,27 @@ function App() {
 
   const toggleCollapsed = (e) => toggleValue(e, "isCollapsed");
 
+  function toggleValueandTurnOff(e, key) {
+    const sectionForm = e.target.closest(".section-form");
+    const { id } = sectionForm;
+    const { arrayName } = sectionForm.dataset;
+    const section = sections[arrayName];
+    setSections({
+      ...sections,
+      [arrayName]: section.map((form) => {
+        if (form.id === id) {
+          form[key] = !form[key];
+        }
+        else {
+          form[key] = true;
+        }
+
+        return form;
+      }),
+    });
+  }
+
+  const toggleCollapsed2 = (e) => toggleValueandTurnOff(e, "isCollapsed");
   function removeForm(e) {
     const form = e.target.closest(".section-form");
     const { arrayName } = form.dataset;
@@ -106,7 +127,7 @@ function App() {
           onChange={handleSectionChange}
           createForm={createEducationForm}
           setOpen={setOpen}
-          toggleCollapsed={toggleCollapsed}
+          toggleCollapsed={toggleCollapsed2}
           onRemove={removeForm}
         />
       </div>
