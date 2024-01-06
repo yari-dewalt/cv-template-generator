@@ -7,6 +7,7 @@ import PersonalInfoSection from "./components/PersonalInfoSection.jsx";
 import EducationInfo from "./components/EducationInfo.jsx";
 import InfoSection from "./components/InfoSection.jsx";
 import EditEducationSection from "./components/EditEducationSection.jsx";
+import ExperienceInfo from "./components/ExperienceInfo.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(data.personalInfo);
@@ -134,6 +135,7 @@ function App() {
       <div id="preview">
         <PersonalInfoSection fullName={personalDetails.fullName} email={personalDetails.email} phoneNumber={personalDetails.phoneNumber} location={personalDetails.location}/>
         <InfoSection array={sections.educations} InfoComponent={EducationInfo} title="Education"/>
+        <InfoSection array={sections.experiences} InfoComponent={ExperienceInfo} title="Experience"/>
       </div>
     </>
   )
