@@ -62,9 +62,7 @@ function App() {
   function toggleValue(e, key) {
     const sectionForm = e.target.closest(".section-form");
     const { id } = sectionForm;
-    console.log(id);
     const { arrayName } = sectionForm.dataset;
-    console.log(arrayName);
     const section = sections[arrayName];
     setSections({
       ...sections,
@@ -73,7 +71,6 @@ function App() {
           form[key] = !form[key];
         }
 
-        console.log(form);
         return form;
       }),
     });
