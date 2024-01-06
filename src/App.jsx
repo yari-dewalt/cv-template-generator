@@ -4,12 +4,8 @@ import data from "./data.jsx";
 import './App.css'
 import PersonalDetails from "./components/PersonalDetails.jsx";
 import PersonalInfoSection from "./components/PersonalInfoSection.jsx";
-import ExpandSection from "./components/ExpandSection.jsx";
-import EducationForm from "./components/EducationForm.jsx";
 import EducationInfo from "./components/EducationInfo.jsx";
 import InfoSection from "./components/InfoSection.jsx";
-import CreateForm from "./components/CreateForm.jsx";
-import DisplayForms from "./components/DisplayForms.jsx";
 import EditEducationSection from "./components/EditEducationSection.jsx";
 
 function App() {
