@@ -8,6 +8,7 @@ import EducationInfo from "./components/EducationInfo.jsx";
 import InfoSection from "./components/InfoSection.jsx";
 import EditEducationSection from "./components/EditEducationSection.jsx";
 import ExperienceInfo from "./components/ExperienceInfo.jsx";
+import EditExperienceSection from "./components/EditExperienceSection.jsx";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(data.personalInfo);
@@ -56,6 +57,18 @@ function App() {
       location: "",
       startDate: "",
       endDate: "",
+      isCollapsed: false,
+      id: uniqid(),
+    });
+
+  const createExperienceForm = () =>
+    createForm("experiences", {
+      companyName: "",
+      positionTitle: "",
+      location: "",
+      startDate: "",
+      endDate: "",
+      description: "",
       isCollapsed: false,
       id: uniqid(),
     });
@@ -127,6 +140,15 @@ function App() {
           isOpen={sectionOpen === "Education"}
           onChange={handleSectionChange}
           createForm={createEducationForm}
+          setOpen={setOpen}
+          toggleCollapsed={toggleCollapsed2}
+          onRemove={removeForm}
+        />
+        <EditExperienceSection
+          experiences={sections.experiences}
+          isOpen={sectionOpen === "Experience"}
+          onChange={handleSectionChange}
+          createForm={createExperienceForm}
           setOpen={setOpen}
           toggleCollapsed={toggleCollapsed2}
           onRemove={removeForm}
