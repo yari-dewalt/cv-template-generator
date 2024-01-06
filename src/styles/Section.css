@@ -1,9 +1,11 @@
 .section-content {
   opacity: 0;
   height: 0;
+  visibility: hidden;
 }
 
 .section-content.open {
   opacity: 1;
   height: auto;
+  visibility: visible;
 }
