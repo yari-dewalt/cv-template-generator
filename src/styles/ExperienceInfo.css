@@ -1,0 +1,21 @@
+.experience-info{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem 0 3rem;
+}
+
+.experience-info-group{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.experience-info-group > p {
+  margin: 0;
+  text-wrap: wrap;
+}
+
+.experience-companyName {
+  font-weight: bold;
+}
