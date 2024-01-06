@@ -19,7 +19,7 @@ function EditExperienceSection({
         isOpen={isOpen}
         setOpen={setOpen}
         sectionName="Experience"
-        iconSource="education.svg"
+        iconSource="experience.svg"
        />
 
       <div className={`section-content ${isOpen ? "open" : ""}`}>
