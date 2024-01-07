@@ -5,6 +5,23 @@ import Buttons from "./Buttons.jsx";
 function ExperienceForm({ data, onChange, save, remove }) {
   const { companyName, positionTitle, location, description, startDate, endDate, id } = data;
 
+  const isFormValid = () => {
+    if (!companyName || !positionTitle || !location || !startDate || !endDate) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSave = (e) => {
+    if (isFormValid()) {
+      save(e);
+    }
+    else {
+      alert("Please fill out all required fields.");
+    }
+  }
+
   return (
     <form
       className="experience-form section-form"
@@ -61,7 +78,7 @@ function ExperienceForm({ data, onChange, save, remove }) {
         data-key="description"
       /> 
 
-      <Buttons save={save} remove={remove}/>
+      <Buttons save={handleSave} remove={remove}/>
     </form>
   );
 }
