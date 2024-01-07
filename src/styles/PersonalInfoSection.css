@@ -1,5 +1,5 @@
 #personal-info {
-  background-color: blue;
+  background-color: var(--accent-color);
 }
 
 #personal-info-name {
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 #personal-contact-info > div {
@@ -18,6 +18,11 @@
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
+  margin: 0.6rem 1rem 0.6rem 1rem;
+}
+
+#personal-contact-info > div > p {
+  margin: 0;
 }
 
 #personal-contact-info > div > img {
