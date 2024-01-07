@@ -1,16 +1,20 @@
 .expand-section {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: white;
+  color: black;
+}
+
+.expand-section-header {
+  display: flex;
   gap: 1rem;
 }
 
 .expand-section > h2 {
   margin: 0.4rem;
-}
-
-.expand-section > img {
-  filter: invert(1);
 }
 
 .expand-icon {
