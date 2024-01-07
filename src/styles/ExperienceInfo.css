@@ -6,7 +6,8 @@
   margin-bottom: 1rem;
 }
 
-.experience-info-group{
+.experience-info-group {
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   text-align: left;
