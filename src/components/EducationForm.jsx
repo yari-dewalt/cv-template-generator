@@ -5,6 +5,23 @@ import Buttons from "./Buttons.jsx";
 function EducationForm({ data, onChange, save, remove }) {
   const { degree, schoolName, location, startDate, endDate, id } = data;
 
+  const isFormValid = () => {
+    if (!schoolName || !degree || !startDate || !endDate || !location) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSave = (e) => {
+    if (isFormValid()) {
+      save(e);
+    }
+    else {
+      alert("Please fill out all required fields.");
+    }
+  }
+
   return (
     <form
       className="education-form section-form"
@@ -53,7 +70,7 @@ function EducationForm({ data, onChange, save, remove }) {
         data-key="location"
       /> 
 
-      <Buttons save={save} remove={remove}/>
+      <Buttons save={handleSave} remove={remove}/>
     </form>
   );
 }
