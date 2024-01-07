@@ -3,11 +3,7 @@ import uniqid from 'uniqid';
 import data from "./data.jsx";
 import './App.css'
 import PersonalDetails from "./components/PersonalDetails.jsx";
-import PersonalInfoSection from "./components/PersonalInfoSection.jsx";
-import EducationInfo from "./components/EducationInfo.jsx";
-import InfoSection from "./components/InfoSection.jsx";
 import EditEducationSection from "./components/EditEducationSection.jsx";
-import ExperienceInfo from "./components/ExperienceInfo.jsx";
 import EditExperienceSection from "./components/EditExperienceSection.jsx";
 import Resume from "./components/Resume.jsx";
 
@@ -21,8 +17,6 @@ function App() {
       [key]: e.target.value
     });
   };
-
-  const [educationDetails, setEducationDetails] = useState(data.sections.educations[0]);
 
   const [sections, setSections] = useState(data.sections);
 
