@@ -1,4 +1,11 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
 .section-content {
+  display: flex;
+  flex-direction: column;
   opacity: 0;
   height: 0;
   visibility: hidden;
@@ -8,4 +15,9 @@
   opacity: 1;
   height: auto;
   visibility: visible;
+}
+
+.forms-container {
+  display: flex;
+  flex-direction: column;
 }
