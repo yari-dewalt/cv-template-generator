@@ -1,6 +1,7 @@
 .personal-details {
-  padding: 1rem;
-  background-color: green;
+  padding: 1rem 1rem 0 1rem;
+  background-color: white;
+  color: black;
 }
 
 .personal-details > h2 {
