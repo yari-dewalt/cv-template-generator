@@ -9,6 +9,7 @@ function CollapsedForm({ onClick, title, arrayName, id }) {
       data-array-name={arrayName}
     >
       <p>{title}</p>
+      <img src="edit.svg"></img>
     </button>
   );
 }
