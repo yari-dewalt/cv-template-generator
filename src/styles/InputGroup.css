@@ -8,3 +8,16 @@
 .input-group > label {
   text-align: left;
 }
+
+.input-group > input {
+  background-color: white;
+  color: black;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.input-group > input:focus {
+  border: 1px solid black;
+  outline: none;
+}
