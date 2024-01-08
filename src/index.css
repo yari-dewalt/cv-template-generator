@@ -29,7 +29,8 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  height: 100%;
+  background-color: rgb(30, 30, 30);
 }
 
 h1 {
