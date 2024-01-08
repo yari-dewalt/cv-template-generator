@@ -1,7 +1,9 @@
 .delete {
   background-color: red;
+  color: white;
 }
 
 .save {
   background-color: green;
+  color: white;
 }
